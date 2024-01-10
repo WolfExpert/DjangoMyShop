@@ -1,82 +1,83 @@
 {% load static %}
 
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/sliders.css' %}">
-</head>
+{% block sliders %}
+    {% if request.path == '/' %}
 
-{% block main_banners %}
-    <div class="slider">
-        <img class="backstage" src="{% static 'img/backstage.png' %}" alt="Backstage"/>
-        <div class="backdrop">
-            <div class="banners-container">
-                <div class="banner1 swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="{% static 'img/banner1__slide1.png' %}"/>
-                            <div class="banner1-content">
-                                <div class="banner1-description">
-                                    <div class="banner1-description__main">
-                                        Rice drink with<br/>
-                                        vitamin D3
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sliders.css' %}">
+        <div class="slider">
+            <img class="backstage" src="{% static 'img/backstage.png' %}" alt="Backstage"/>
+            <div class="backdrop">
+                <div class="banners-container">
+                    <div class="banner1 swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/banner1__slide1.png' %}"/>
+                                <div class="banner1-content">
+                                    <div class="banner1-description">
+                                        <div class="banner1-description__main">
+                                            Rice drink with<br/>
+                                            vitamin D3
+                                        </div>
+                                        <div class="banner1-description__discount">
+                                            Up to 30% off your first order
+                                        </div>
                                     </div>
-                                    <div class="banner1-description__discount">
-                                        Up to 30% off your first order
+
+                                    <div class="subscription-form">
+                                        <input
+                                                type="email"
+                                                placeholder="Enter your email address"
+                                        />
+                                        <button type="submit">Subscribe</button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/banner1__slide2.png' %}"/>
+                                <div class="banner1-content">
+                                    <div class="banner1-description">
+                                        <div class="banner1-description__main">
+                                            Berries for<br/>
+                                            breakfast
+                                        </div>
+                                        <div class="banner1-description__discount">
+                                            discount for subscribers
+                                        </div>
+                                    </div>
 
-                                <div class="subscription-form">
-                                    <input
-                                            type="email"
-                                            placeholder="Enter your email address"
-                                    />
-                                    <button type="submit">Subscribe</button>
+                                    <div class="subscription-form">
+                                        <input
+                                                type="email"
+                                                placeholder="Enter your email address"
+                                        />
+                                        <button type="submit">Subscribe</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="{% static 'img/banner1__slide2.png' %}"/>
-                            <div class="banner1-content">
-                                <div class="banner1-description">
-                                    <div class="banner1-description__main">
-                                        Berries for<br/>
-                                        breakfast
-                                    </div>
-                                    <div class="banner1-description__discount">
-                                        discount for subscribers
-                                    </div>
-                                </div>
-
-                                <div class="subscription-form">
-                                    <input
-                                            type="email"
-                                            placeholder="Enter your email address"
-                                    />
-                                    <button type="submit">Subscribe</button>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <div class="banner2">
-                    <img src="{% static 'img/banner2.png' %}" alt="Banner 2"/>
-                    <div class="banner2-content">
-                        <div class="banner2-description">
-                            <div class="banner2-description__main">
-                                Buy with <br/><span>free <br/>shipping</span>
+                    <div class="banner2">
+                        <img src="{% static 'img/banner2.png' %}" alt="Banner 2"/>
+                        <div class="banner2-content">
+                            <div class="banner2-description">
+                                <div class="banner2-description__main">
+                                    Buy with <br/><span>free <br/>shipping</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <button class="shop-now-button">
-                            <div class="shop-now-button__text">Shop now</div>
-                            <div class="shop-now-button__vector"></div>
-                        </button>
+                            <button class="shop-now-button">
+                                <div class="shop-now-button__text">Shop now</div>
+                                <div class="shop-now-button__vector"></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="{% static 'js/swipers.js' %}"></script>
+        <script src="{% static 'js/swipers.js' %}"></script>
+    {% endif %}
 
 {% endblock %}

@@ -1,0 +1,185 @@
+{% load static %}
+
+<header class="header">
+    <div class="header-top">
+        <div class="header-top-content">
+            <div class="logo-and-search">
+                <div class="logo effect-shine hover-filter-green">Nolorn</div>
+
+                <div class="search-bar hover-shadow">
+                    <select>
+                        <option value="all">All categories</option>
+                        <option value="category1">Category 1</option>
+                        <option value="category2">Category 2</option>
+                    </select>
+                    <div class="search-bar__separator"></div>
+                    <input type="text" placeholder="Search..."/>
+                    <button>
+                        <img
+                                class="hover-filter-green"
+                                src="{% static "img/search-button.svg" %}"
+                        />
+                    </button>
+                </div>
+            </div>
+
+            <div class="users-corner">
+                <div class="dropdown-top hover-shadow">
+                    <img src="{% static "img/location.svg" %}"/>
+                    <div class="dropdown-top-center">
+                        <button class="dropdown-top-center__name">
+                            All categories
+                        </button>
+                        <div class="dropdown-top-center__menu">
+                            <ul>
+                                <li><a href="#">Category 1</a></li>
+                                <li><a href="#">Category 2</a></li>
+                                <li><a href="#">Category 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="{% static "img/arrowdown.svg" %}"/>
+                </div>
+
+                <div class="user-nav">
+                    <a href="#wishlist" class="user-nav-button wishlist effect-underline">
+                        <div class="user-nav-button-icon">
+                            <div class="user-nav-button-icon__vector">
+                                <img src="{% static "img/heart.svg" %}"/>
+                            </div>
+                            <div class="user-nav-button-icon__counter">
+                                <div class="user-nav-button-icon__counter_appear">1</div>
+                            </div>
+                        </div>
+                        <div class="user-nav-button__name">Wishlist</div>
+                    </a>
+
+                    <a href="#cart" class="user-nav-button cart effect-underline">
+                        <div class="user-nav-button-icon">
+                            <div class="user-nav-button-icon__vector">
+                                <img src="{% static "img/cart.svg" %}"/>
+                            </div>
+                            <div class="user-nav-button-icon__counter">
+                                <div class="user-nav-button-icon__counter_appear">1</div>
+                            </div>
+                        </div>
+                        <div class="user-nav-button__name">Cart</div>
+                    </a>
+
+                    <a href="#account" class="user-nav-button account effect-underline">
+                        <div class="user-nav-button-icon">
+                            <div class="user-nav-button-icon__vector">
+                                <img src="{% static "img/account.svg" %}"/>
+                            </div>
+                        </div>
+                        <div class="user-nav-button__name">Account</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bot">
+        <div class="header-bot-content">
+            <div class="dropdown-bot hover-shadow">
+                <div class="dropdown-bot__icon">
+                    <img src="{% static 'img/dropdown-dots.svg' %}"/>
+                </div>
+                <div class="dropdown-bot-center">
+                    <button class="dropdown-bot-center__name">
+                        Browse All Categories
+                    </button>
+                    <div class="dropdown-bot-center__menu">
+                        <ul>
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 2</a></li>
+                            <li><a href="#">Category 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown-bot__icon">
+                    <img src="{% static 'img/arrowdown.svg' %}" class="filter-white"/>
+                </div>
+            </div>
+
+            <div class="site-nav">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">Home <img src="{% static 'img/arrowdown.svg' %}"/></a>
+                            <ul>
+                                <li><a href="#">Submenu Item 1</a></li>
+                                <li><a href="#">Submenu Item 2</a></li>
+                                <li><a href="#">Submenu Item 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">About</a></li>
+                        <li>
+                            <a href="#">Shop <img src="{% static 'img/arrowdown.svg' %}"/></a>
+                            <ul>
+                                <li><a href="#">Submenu Item 1</a></li>
+                                <li><a href="#">Submenu Item 2</a></li>
+                                <li><a href="#">Submenu Item 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Blog <img src="{% static 'img/arrowdown.svg' %}"/></a>
+                            <ul>
+                                <li><a href="#">Submenu Item 1</a></li>
+                                <li><a href="#">Submenu Item 2</a></li>
+                                <li><a href="#">Submenu Item 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="contact-info">
+                <div class="social-media">
+                    <a href="#facebook">
+                        <div class="facebook hover-filter-green">
+                            <img src="{% static 'img/facebook-18px.svg' %}"/>
+                        </div>
+                    </a>
+                    <a href="#twitter">
+                        <div class="twitter hover-filter-green">
+                            <img src="{% static 'img/twitter-18px.svg' %}"/>
+                        </div>
+                    </a>
+                    <a href="#instagram">
+                        <div class="instagram hover-filter-green">
+                            <img src="{% static 'img/instagram-18px.svg' %}"/>
+                        </div>
+                    </a>
+                    <a href="#youtube">
+                        <div class="youtube hover-filter-green">
+                            <img src="{% static 'img/youtube-18px.svg' %}"/>
+                        </div>
+                    </a>
+                    <a href="#whatsapp">
+                        <div class="whatsapp hover-filter-green">
+                            <img src="{% static 'img/whatsapp-18px.svg' %}"/>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="phone-calls">
+                    <div class="phone-calls__icon">
+                        <img src="{% static 'img/calling.svg' %}"/>
+                    </div>
+
+                    <div class="phone-details">
+                        <a href="tel:406-555-0120" class="phone-details__number no-decoration">
+                            (406) 555-0120
+                        </a>
+                        <div class="phone-details__time">Mon - Fri: 9:00-20:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</header>

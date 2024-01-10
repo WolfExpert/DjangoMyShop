@@ -27,11 +27,3 @@ def product_detail(request, id, slug):
                   'shop/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form})
-
-
-def sliders(request):
-    # ... any additional context data you may have ...
-
-    return render(request, 'shop/sliders.html')
-
-
