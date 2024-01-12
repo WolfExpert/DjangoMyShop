@@ -38,8 +38,6 @@
     {% include 'shop/sliders.html' %}
 {% endblock %}
 
-<script src="{% static 'js/swipers.js' %}"></script>
-
 
 <div id="header">
     <a href="/" class="logo">My shop</a>
@@ -59,7 +57,7 @@
         {% endwith %}
     </div>
 </div>
-<div id="content">
+<div>
     {% block content %}
     {% endblock %}
 </div>

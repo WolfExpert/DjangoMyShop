@@ -143,7 +143,8 @@ ul.errorlist {
 }
 
 #content {
-    padding:0 100px;
+    padding:0;
+    margin: 0;
     overflow:hidden;
 }
 
@@ -177,12 +178,7 @@ ul.errorlist {
     color:#fff;
 }
 
-#main {
-    float:left;
-    width: 96%;
-    margin-right:-220px;
-    overflow:hidden;
-}
+
 
 .product-list .item {
     width:25%;
