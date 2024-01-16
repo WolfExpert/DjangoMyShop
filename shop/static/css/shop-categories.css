@@ -1,0 +1,313 @@
+.shop-categories {
+    margin-bottom: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    width: 100%;
+    height: 115px;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1170px;
+}
+
+.category {
+    width: 120px;
+    height: 115px;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #253D4E;
+    margin: 0;
+    padding: 0;
+    grid-gap: 9px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.category img {
+    order: -1;
+}
+
+.category:hover {
+    background: #FFFFFF;
+    box-shadow: 0px 23px 18px rgba(9, 30, 66, 0.08), 0px 0px 1px rgba(9, 30, 66, 0.31);
+    transition: 0.3s;
+}
+
+.slide-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(315deg, #19C179 -0.12%, #4FE58A 99.88%);
+    box-shadow: 0px 9px 15px rgba(9, 30, 66, 0.08), 0px 0px 1px rgba(9, 30, 66, 0.31);
+    border-radius: 35px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    transition: 0.3s;
+}
+
+.slide-arrow:hover {
+    background: #FFFFFF;
+    box-shadow: 0px 9px 15px rgba(9, 30, 66, 0.08), 0px 0px 1px rgba(9, 30, 66, 0.31);
+    transition: 0.3s;
+}
+
+.slide-arrow:hover img {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(7%) saturate(15%) hue-rotate(18deg) brightness(89%) contrast(87%);
+}
+
+.sets,
+.sweets {
+    background: #D4EEE2;
+}
+
+.fruits,
+.drinks {
+    background: #E9ECF4;
+}
+
+.vegetables,
+.groceries {
+    background: #F4EAEA;
+}
+
+.greenery {
+    background: #D9F2F9;
+}
+
+.fungi {
+    background: #F2EBD9;
+}
+
+.banners-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px;
+    grid-gap: 30px;
+    width: 100%;
+    min-height: 230px;
+    margin-bottom: 100px;
+    margin-top: 60px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.banner {
+    width: 370px;
+    height: 230px;
+    background-size: 100%;
+    border-radius: 10px;
+    flex: none;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.banner img {
+    position: absolute;
+    width: 370px;
+    height: 230px;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.banner:hover {
+    box-shadow: 0px 23px 18px rgba(9, 30, 66, 0.08), 0px 0px 1px rgba(9, 30, 66, 0.31);
+    transition: 0.3s;
+}
+
+.vegan {
+    order: 0;
+    background-image: url(../img/banner_gr_backgr_pic_1.png);
+    background-repeat: no-repeat;
+}
+
+.diet {
+    order: 1;
+    background-image: url(../img/banner_gr_backgr_pic_2.png);
+}
+
+.energy {
+    order: 2;
+    background-image: url(../img/banner_gr_backgr_pic_3.png);
+}
+
+.vegan-2 {
+    order: 0;
+    background-image: url(../img/banner-pineapple.png);
+    background-repeat: no-repeat;
+    border: 0.5px solid #939393;
+}
+
+.diet-2 {
+    order: 0;
+    background-image: url(../img/banner-bananas.png);
+    background-repeat: no-repeat;
+    border: 0.5px solid #939393;
+}
+
+.energy-2 {
+    order: 0;
+    background-image: url(../img/banner-rowanberry.png);
+    background-repeat: no-repeat;
+    border: 0.5px solid #939393;
+}
+
+.vegan-2:hover,
+.diet-2:hover,
+.energy-2:hover {
+    border: 0.5px solid white;
+}
+
+.banner-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    grid-gap: 16px;
+    position: relative;
+    width: 238px;
+    height: 108px;
+    left: 30px;
+    top: 92px;
+    z-index: 0;
+}
+
+.banner-title__name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    grid-gap: 32px;
+    width: 238px;
+    height: 50px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #253D4E;
+    z-index: 0;
+}
+
+.shop-now-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 20px;
+    grid-gap: 12px;
+    width: 141px;
+    height: 42px;
+    background: linear-gradient(315deg, #19C179 -0.12%, #4FE58A 99.88%);
+    border-radius: 4px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    border: 0;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.shop-now-button:hover {
+    background: #17a56a;
+}
+
+.shop-now-button__text {
+    width: 66px;
+    height: 18px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.shop-now-button__vector {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    background-image: url(../img/slide__arrow_right.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+    .banners-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .banner {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banners-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-title {
+        width: 100%;
+        max-width: 238px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .banner {
+        width: 90%;
+        max-width: 370px;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        height: auto;
+        background-position: 50% 70%;
+    }
+
+    .banner img {
+        margin-bottom: 20px;
+    }
+
+    .banner-title {
+        width: 100%;
+        max-width: 238px;
+        left: 0px;
+        top: 0px;
+    }
+}

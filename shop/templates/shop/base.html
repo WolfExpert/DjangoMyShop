@@ -38,6 +38,10 @@
     {% include 'shop/sliders.html' %}
 {% endblock %}
 
+{% block shop-categories %}
+    {% include 'shop/shop-categories.html' %}
+{% endblock %}
+
 
 <div id="header">
     <a href="/" class="logo">My shop</a>
@@ -63,3 +67,5 @@
 </div>
 </body>
 </html>
+
+<script src="{% static 'js/swipers.js' %}"></script>
