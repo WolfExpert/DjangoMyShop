@@ -4,8 +4,7 @@
     <div class="header-top">
         <div class="header-top-content">
             <div class="logo-and-search">
-                <div class="logo effect-shine hover-filter-green">Nolorn</div>
-
+                <a href="/" class="logo effect-shine hover-filter-green">Nolorn</a>
                 <div class="search-bar hover-shadow">
                     <select>
                         <option value="all">All categories</option>
@@ -34,7 +33,7 @@
                         <div class="dropdown-top-center__menu">
                             <ul>
                                 {% for c in categories %}
-                                <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+                                    <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -55,14 +54,19 @@
                         <div class="user-nav-button__name">Wishlist</div>
                     </a>
 
-                    <a href="#cart" class="user-nav-button cart effect-underline">
+                    <a href="/cart" class="user-nav-button cart effect-underline">
                         <div class="user-nav-button-icon">
                             <div class="user-nav-button-icon__vector">
                                 <img src="{% static "img/cart.svg" %}"/>
                             </div>
-                            <div class="user-nav-button-icon__counter">
-                                <div class="user-nav-button-icon__counter_appear">1</div>
-                            </div>
+                            {% with total_items=cart|length %}
+                                {% if total_items > 0 %}
+                                    <div class="user-nav-button-icon__counter">
+                                        <div class="user-nav-button-icon__counter_appear">{{ total_items }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endwith %}
+
                         </div>
                         <div class="user-nav-button__name">Cart</div>
                     </a>

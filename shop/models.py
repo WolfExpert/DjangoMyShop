@@ -48,5 +48,5 @@ class Product(models.Model):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
 
-    def atata(self):
-        return Product.price
+    def price_test(self):
+        return float(self.price) * 1.2

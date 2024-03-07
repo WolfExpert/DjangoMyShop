@@ -10,116 +10,110 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
     <body>
-        <div class="popular-products">
-            <div class="section-header">
-                <div class="section-header__name">Popular <span>Products</span></div>
-                <div class="section-header-sorting">
+    <div class="popular-products">
+        <div class="section-header">
+            <div class="section-header__name">Popular <span>Products</span></div>
+            <div class="section-header-sorting">
 
+                <div class="section-header-sorting_text">
+                    <a {% if not category %}class="selected-green"{% endif %}
+                       {% if category %}class="section-header-sorting_text effect-underline"{% endif %}
+                       href="{% url "shop:product_list" %}">All</a>
+                </div>
+
+                {% for c in categories %}
                     <div class="section-header-sorting_text">
-                        <a {% if not category %}class="selected-green"{% endif %}
-                           {% if category %}class="section-header-sorting_text effect-underline"{% endif %}
-                           href="{% url "shop:product_list" %}">All</a>
+                        <a {% if category.slug == c.slug %}class="selected-green"{% endif %}
+                           {% if not category.slug == c.slug %}class="section-header-sorting_text effect-underline"{% endif %}
+                           href="{{ c.get_absolute_url }}"> {{ c.name }}</a>
                     </div>
-
-                    {% for c in categories %}
-                        <div class="section-header-sorting_text">
-                            <a {% if category.slug == c.slug %}class="selected-green"{% endif %}
-                               {% if not category.slug == c.slug %}class="section-header-sorting_text effect-underline"{% endif %}
-                               href="{{ c.get_absolute_url }}"> {{ c.name }}</a>
-                        </div>
-                    {% endfor %}
-
-                </div>
+                {% endfor %}
 
             </div>
 
-            <div class="section-header">
-                <div class="section-header__name">Popular <span>Products</span></div>
-                <div class="section-header-sorting">
-                    <div class="section-header-sorting_text selected-green">All</div>
-                    <div class="section-header-sorting_text effect-underline">Milks</div>
-                    <div class="section-header-sorting_text effect-underline">
-                        Pet Foods
-                    </div>
-                    <div class="section-header-sorting_text effect-underline">
-                        Vegetables
-                    </div>
-                    <div class="section-header-sorting_text effect-underline">Fruits</div>
+        </div>
+
+        <div class="section-header">
+            <div class="section-header__name">Popular <span>Products</span></div>
+            <div class="section-header-sorting">
+                <div class="section-header-sorting_text selected-green">All</div>
+                <div class="section-header-sorting_text effect-underline">Milks</div>
+                <div class="section-header-sorting_text effect-underline">
+                    Pet Foods
                 </div>
-            </div>
-
-
-            <div class="product-list">
-                <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-                <div class="product-cards">
-                    {% for product in products %}
-
-                        <!--
-            <div class="item">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="
-
-                            {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                <br>
-                ${{ product.price }}
-            </div>
-            -->
-
-                        <div class="product-card">
-                            <a href="{{ product.get_absolute_url }}">
-                                <img src="
-
-
-
-                                        {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-                            </a>
-                            <div class="heart colorize-pink"></div>
-                            <div class="ribbon">
-                                <div class="ribbon__title">Sale</div>
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-card-description">
-                                    <div class="product-card-description__category">{{ product.category }}</div>
-
-                                    <a href="{{ product.get_absolute_url }}">
-                                        <div class="product-card-description__name">{{ product.name }}</div>
-                                    </a>
-
-                                    <div class="rate-stars">
-                                        <div class="rate">
-                                            <div class="rate__star_gold"></div>
-                                            <div class="rate__star_gold"></div>
-                                            <div class="rate__star_gold"></div>
-                                            <div class="rate__star_gold"></div>
-                                            <div class="rate__star_grey"></div>
-                                        </div>
-
-                                        <div class="rate__number">(4.0)</div>
-                                    </div>
-
-                                    <div class="product-card-description__price-per-kg">
-                                        Price per kg
-                                    </div>
-                                </div>
-
-                                <div class="product-card-purchase">
-                                    <div class="product-card-info__price">
-                                        ${{ product.price }} <span>${{ product.price }} </span>
-                                    </div>
-                                    <div class="add-to-cart-button-small">
-                                        <div class="add-to-cart-button-small__vector"></div>
-                                        <div class="add-to-cart-button-small__name">Add</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    {% endfor %}
+                <div class="section-header-sorting_text effect-underline">
+                    Vegetables
                 </div>
+                <div class="section-header-sorting_text effect-underline">Fruits</div>
             </div>
         </div>
+
+
+        <div class="product-list">
+            <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+            <div class="product-cards">
+                {% for product in products %}
+
+
+                    <div class="product-card">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="
+
+                                    {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                        </a>
+                        <div class="heart colorize-pink"></div>
+                        <div class="ribbon">
+                            <div class="ribbon__title">Sale</div>
+                        </div>
+                        <div class="product-card-info">
+                            <div class="product-card-description">
+                                <div class="product-card-description__category">{{ product.category }}</div>
+
+                                <a href="{{ product.get_absolute_url }}">
+                                    <div class="product-card-description__name">{{ product.name }}</div>
+                                </a>
+
+                                <div class="rate-stars">
+                                    <div class="rate">
+                                        <div class="rate__star_gold"></div>
+                                        <div class="rate__star_gold"></div>
+                                        <div class="rate__star_gold"></div>
+                                        <div class="rate__star_gold"></div>
+                                        <div class="rate__star_grey"></div>
+                                    </div>
+
+                                    <div class="rate__number">(4.0)</div>
+                                </div>
+
+                                <div class="product-card-description__price-per-kg">
+                                    Price per kg
+                                </div>
+                            </div>
+
+                            <div class="product-card-purchase">
+                                <div class="product-card-info__price">
+                                    ${{ product.price }} <span> ${{ product.price_test }} </span>
+                                </div>
+                                <div class="add-to-cart-button-small">
+                                    <div class="add-to-cart-button-small__vector"></div>
+                                    <div class="add-to-cart-button-small__name">Add</div>
+                                </div>
+                            </div>
+
+<form action="{% url "cart:cart_add" product.id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="quantity" value="{{ default_quantity }}">
+    <input type="hidden" name="add_to_cart" value="True">
+    <button type="submit">Add to Cart</button>
+</form>
+
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     </body>
 {% endblock %}
 

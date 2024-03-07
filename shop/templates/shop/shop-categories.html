@@ -7,55 +7,57 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/shop-categories.css' %}">
 
 
-    <div class="shop-categories">
-      <div class="section-header">
-        <div class="section-header__name">Shop <span>by Categories</span></div>
-        <div class="section-header-sorting arrows">
-          <div class="slide-arrow slide-arrow-left">
-            <img src="{% static 'img/slide__arrow_left.svg' %}" class="filter-white" />
-          </div>
-          <div class="slide-arrow slide-arrow-right">
-            <img src="{% static 'img/slide__arrow_right.svg' %}" />
-          </div>
+        <div class="shop-categories">
+            <div class="section-header">
+                <div class="section-header__name">Shop <span>by Categories</span></div>
+                <div class="section-header-sorting arrows">
+                    <div class="slide-arrow slide-arrow-left">
+                        <img src="{% static 'img/slide__arrow_left.svg' %}" class="filter-white"/>
+                    </div>
+                    <div class="slide-arrow slide-arrow-right">
+                        <img src="{% static 'img/slide__arrow_right.svg' %}"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="categories">
+                <div class="swiper-wrapper">
+                    <a href="/sets/" class="swiper-slide category sets">
+                        Sets
+                        <img class="category__icon" src="{% static 'img/sets.svg' %}"/>
+                    </a>
+                    <a href="/fruits/" class="swiper-slide category fruits">
+                        Fruits
+                        <img class="category__icon" src="{% static 'img/fruits.svg' %}"/>
+                    </a>
+                    <a href="/vegetables/" class="swiper-slide category vegetables">
+                        Vegetables
+                        <img class="category__icon" src="{% static 'img/vegetables.svg' %}"/>
+                    </a>
+                    <a href="/greenery/" class="swiper-slide category greenery">
+                        Greenery
+                        <img class="category__icon" src="{% static 'img/greenery.svg' %}"/>
+                    </a>
+                    <a href="/fungi/" class="swiper-slide category fungi">
+                        Fungi
+                        <img class="category__icon" src="{% static 'img/fungi.svg' %}"/>
+                    </a>
+                    <a href="/groceries/" class="swiper-slide category groceries">
+                        Groceries
+                        <img class="category__icon" src="{% static 'img/groceries.svg' %}"/>
+                    </a>
+                    <a href="/sweets/" class="swiper-slide category sweets">
+                        Sweets
+                        <img class="category__icon" src="{% static 'img/sweets.svg' %}"/>
+                    </a>
+                    <a href="/drinks/" class="swiper-slide category drinks">
+                        Drinks
+                        <img class="category__icon" src="{% static 'img/drinks.svg' %}"/>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="categories">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide category sets">
-            Sets
-            <img class="category__icon" src="{% static 'img/sets.svg' %}" />
-          </div>
-          <div class="swiper-slide category fruits">
-            Fruits
-            <img class="category__icon" src="{% static 'img/fruits.svg' %}" />
-          </div>
-          <div class="swiper-slide category vegetables">
-            Vegetables
-            <img class="category__icon" src="{% static 'img/vegetables.svg' %}" />
-          </div>
-          <div class="swiper-slide category greenery">
-            Greenery
-            <img class="category__icon" src="{% static 'img/greenery.svg' %}" />
-          </div>
-          <div class="swiper-slide category fungi">
-            Fungi
-            <img class="category__icon" src="{% static 'img/fungi.svg' %}" />
-          </div>
-          <div class="swiper-slide category groceries">
-            Groceries
-            <img class="category__icon" src="{% static 'img/groceries.svg' %}" />
-          </div>
-          <div class="swiper-slide category sweets">
-            Sweets
-            <img class="category__icon" src="{% static 'img/sweets.svg' %}" />
-          </div>
-          <div class="swiper-slide category drinks">
-            Drinks
-            <img class="category__icon" src="{% static 'img/drinks.svg' %}" />
-          </div>
-        </div>
-      </div>
-    </div>
 
     {% endif %}
 
