@@ -94,26 +94,47 @@
                                 <div class="product-card-info__price">
                                     ${{ product.price }} <span> ${{ product.price_test }} </span>
                                 </div>
-                                <div class="add-to-cart-button-small">
-                                    <div class="add-to-cart-button-small__vector"></div>
-                                    <div class="add-to-cart-button-small__name">Add</div>
-                                </div>
-                            </div>
-
-<form action="{% url "cart:cart_add" product.id %}" method="post">
+<form id="add-to-cart-form" action="{% url "cart:cart_add" product.id %}" method="post">
     {% csrf_token %}
+    <div class="add-to-cart-button-small" onclick="submitForm({{ product.id }})">
+        <div class="add-to-cart-button-small__vector"></div>
+        <div class="add-to-cart-button-small__name">Add</div>
+    </div>
     <input type="hidden" name="quantity" value="{{ default_quantity }}">
     <input type="hidden" name="add_to_cart" value="True">
-    <button type="submit">Add to Cart</button>
 </form>
 
+                            </div>
                         </div>
                     </div>
-
                 {% endfor %}
             </div>
         </div>
     </div>
+<script>
+    function submitForm(productId) {
+        console.log('Before form submission');
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Update the form action based on the selected product ID
+        document.getElementById('add-to-cart-form').action = `/cart/add/${productId}/`;
+
+        // Perform the form submission using JavaScript
+        fetch(document.getElementById('add-to-cart-form').action, {
+            method: 'POST',
+            body: new FormData(document.getElementById('add-to-cart-form'))
+        }).then(response => {
+            console.log('Form submitted successfully');
+            // Handle the response if needed
+        }).catch(error => {
+            console.error('Error submitting the form:', error);
+            // Handle the error if needed
+        });
+        console.log('After form submission');
+    }
+</script>
+
     </body>
 {% endblock %}
 
