@@ -113,6 +113,31 @@
         </div>
     </div>
     <script>
+
+// Find all the "add to cart" buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart-button-small');
+
+// Loop through each button and add a click event listener
+addToCartButtons.forEach(button => {
+    // Store the original HTML content of the button
+    const originalButtonContent = button.innerHTML;
+
+    button.addEventListener('click', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Change the button content to "Added"
+        button.textContent = 'Added!';
+
+        // Set a timeout to revert the button back to the original content after 2 seconds
+        setTimeout(() => {
+            button.innerHTML = originalButtonContent;
+        }, 1000); // 2000 milliseconds = 2 seconds
+
+        // You can also add additional functionality here such as adding the product to the cart
+    });
+});
+
         function submitForm(productId) {
             console.log('Before form submission');
             // Prevent the default form submission
