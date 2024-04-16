@@ -33,50 +33,54 @@
 .quantity-selector {
     display: flex;
     align-items: center;
-    gap: 4px; /* Adjust space between elements */
+    justify-content: space-between; /* Adjust to manage spacing */
+    width: 140px; /* Increased width */
+    height: 44px;
+    background: #FFFFFF;
+    border: 0.5px solid #939393;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 4px; /* Can reduce if needed */
 }
 
 .quantity-selector select {
-    -webkit-appearance: none; /* Remove default styling on WebKit browsers */
-    -moz-appearance: none; /* Remove default styling on Mozilla browsers */
-    appearance: none; /* Remove default styling to make it consistent across browsers */
-    border: 1px solid #27CA7D; /* Custom border color */
-    border-radius: 4px; /* Rounded corners */
-    width: 73px;
-    height: 32px; /* Increased to allow internal padding */
-    padding: 6px; /* Padding inside the select, decrease if you increase the height */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
     color: #27CA7D;
-    background: white; /* Optional: sets a background color */
-    cursor: pointer;
+    text-align: center;
+    width: 50px; /* Adjusted width */
+    height: 100%; /* Takes full height of the container */
+    flex-grow: 0;
+    flex-shrink: 1;
 }
 
 .quantity-change {
-    background: #27CA7D;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
     border: none;
-    border-radius: 4px;
-    color: white;
-    width: 20px; /* Width for buttons */
-    height: 32px; /* Match the height of the select */
-    padding: 0; /* Reset padding */
-    font-family: 'Quicksand', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 18px;
+    padding: 0;
     cursor: pointer;
+    flex-shrink: 0; /* Do not allow these to shrink */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/* You may need additional styling for custom dropdown arrow */
-.quantity-selector::after {
-    content: '';
-    /* Custom arrow styling */
+.quantity-change.minus {
+    background: url(../img/arrowdown.svg) no-repeat center;
+  /*  background-size: contain; /* Ensures the SVG fits the button */
 }
 
-/* Styling for minus and plus inside buttons if needed */
-.quantity-change.minus::before,
-.quantity-change.plus::before {
-    /* Content and style for minus and plus signs */
+.quantity-change.plus {
+    background: url(../img/arrowdown.svg) no-repeat center;
+   /* background-size: contain; /* Ensures the SVG fits the button */
+    transform: rotate(180deg); /* Rotates the plus button */
 }

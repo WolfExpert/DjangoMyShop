@@ -18,13 +18,16 @@
         </h2>
         <p class="price">${{ product.price }}</p>
 
+
         <form action="{% url 'cart:cart_add' product.id %}" method="post">
             {% csrf_token %}
             <div class="quantity-selector">
-                <button type="button" class="quantity-change minus">-</button>
-                {{ cart_product_form.quantity }}
-                <button type="button" class="quantity-change plus">+</button>
+                <span>Quantity:</span>
+                <button type="button" class="quantity-change minus" aria-label="Decrease quantity"></button>
+                {{ cart_product_form.quantity }}  <!-- Django renders the select and options here -->
+                <button type="button" class="quantity-change plus" aria-label="Increase quantity"></button>
             </div>
+
             <button class="add-to-cart-button-small">
                 <span class="add-to-cart-button-small__vector"></span>
                 <span class="add-to-cart-button-small__name">Add</span>
@@ -39,19 +42,34 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var quantitySelect = document.querySelector('.quantity-selector select');
-            var minusButton = document.querySelector('.quantity-selector .minus');
-            var plusButton = document.querySelector('.quantity-selector .plus');
+            var minusButton = document.querySelector('.quantity-change.minus');
+            var plusButton = document.querySelector('.quantity-change.plus');
+
+            if (!quantitySelect || !minusButton || !plusButton) {
+                console.log('One or more elements are not found:', {
+                    quantitySelect,
+                    minusButton,
+                    plusButton
+                });
+                return;
+            }
 
             minusButton.addEventListener('click', function () {
                 if (quantitySelect.selectedIndex > 0) {
                     quantitySelect.selectedIndex--;
+                    quantitySelect.dispatchEvent(new Event('change')); // Trigger change event
                 }
             });
 
             plusButton.addEventListener('click', function () {
                 if (quantitySelect.selectedIndex < quantitySelect.options.length - 1) {
                     quantitySelect.selectedIndex++;
+                    quantitySelect.dispatchEvent(new Event('change')); // Trigger change event
                 }
+            });
+
+            quantitySelect.addEventListener('change', function () {
+                console.log('Quantity changed to:', this.value);
             });
         });
 
