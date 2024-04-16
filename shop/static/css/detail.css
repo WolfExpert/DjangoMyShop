@@ -1,0 +1,82 @@
+.add-to-cart-button-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 12px;
+    background: #D4EEE2;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none; /* Add if you want to remove the default button border */
+}
+
+.add-to-cart-button-small:hover {
+    background: #d7e3c8;
+}
+
+.add-to-cart-button-small__vector {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/cart_green.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.add-to-cart-button-small__name {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    color: #27CA7D;
+    display: block; /* Ensures the span takes the full space allocated to it, similar to a div */
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Adjust space between elements */
+}
+
+.quantity-selector select {
+    -webkit-appearance: none; /* Remove default styling on WebKit browsers */
+    -moz-appearance: none; /* Remove default styling on Mozilla browsers */
+    appearance: none; /* Remove default styling to make it consistent across browsers */
+    border: 1px solid #27CA7D; /* Custom border color */
+    border-radius: 4px; /* Rounded corners */
+    width: 73px;
+    height: 32px; /* Increased to allow internal padding */
+    padding: 6px; /* Padding inside the select, decrease if you increase the height */
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #27CA7D;
+    background: white; /* Optional: sets a background color */
+    cursor: pointer;
+}
+
+.quantity-change {
+    background: #27CA7D;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    width: 20px; /* Width for buttons */
+    height: 32px; /* Match the height of the select */
+    padding: 0; /* Reset padding */
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+/* You may need additional styling for custom dropdown arrow */
+.quantity-selector::after {
+    content: '';
+    /* Custom arrow styling */
+}
+
+/* Styling for minus and plus inside buttons if needed */
+.quantity-change.minus::before,
+.quantity-change.plus::before {
+    /* Content and style for minus and plus signs */
+}

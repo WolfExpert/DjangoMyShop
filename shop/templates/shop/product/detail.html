@@ -5,6 +5,8 @@
     {{ product.name }}
 {% endblock %}
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+
     <div class="product-detail">
         <img src="{% if product.image %}{{ product.image.url }}{% else %}
 {% static "img/no_image.png" %}{% endif %}">
@@ -15,13 +17,44 @@
             </a>
         </h2>
         <p class="price">${{ product.price }}</p>
-        <form action="{% url "cart:cart_add" product.id %}" method="post">
-            {{ cart_product_form }}
+
+        <form action="{% url 'cart:cart_add' product.id %}" method="post">
             {% csrf_token %}
-            <input type="submit" value="Add to cart">
+            <div class="quantity-selector">
+                <button type="button" class="quantity-change minus">-</button>
+                {{ cart_product_form.quantity }}
+                <button type="button" class="quantity-change plus">+</button>
+            </div>
+            <button class="add-to-cart-button-small">
+                <span class="add-to-cart-button-small__vector"></span>
+                <span class="add-to-cart-button-small__name">Add</span>
+            </button>
         </form>
 
 
         {{ product.description|linebreaks }}
     </div>
+    <!-- <script src="{% static 'js/add-to-cart.js' %}"></script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var quantitySelect = document.querySelector('.quantity-selector select');
+            var minusButton = document.querySelector('.quantity-selector .minus');
+            var plusButton = document.querySelector('.quantity-selector .plus');
+
+            minusButton.addEventListener('click', function () {
+                if (quantitySelect.selectedIndex > 0) {
+                    quantitySelect.selectedIndex--;
+                }
+            });
+
+            plusButton.addEventListener('click', function () {
+                if (quantitySelect.selectedIndex < quantitySelect.options.length - 1) {
+                    quantitySelect.selectedIndex++;
+                }
+            });
+        });
+
+
+    </script>
 {% endblock %}
