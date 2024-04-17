@@ -33,14 +33,30 @@
 .quantity-selector {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Adjust to manage spacing */
+    justify-content: space-around; /* Adjust to manage spacing */
     width: 140px; /* Increased width */
     height: 44px;
     background: #FFFFFF;
     border: 0.5px solid #939393;
     border-radius: 4px;
-    padding: 10px;
-    gap: 4px; /* Can reduce if needed */
+    /* padding: 10px; */
+    gap: 0px; /* Can reduce if needed */
+}
+
+.quantity-selector span {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #27CA7D;
+}
+
+
+.selector-with-buttons {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .quantity-selector select {
@@ -55,10 +71,17 @@
     line-height: 18px;
     color: #27CA7D;
     text-align: center;
-    width: 50px; /* Adjusted width */
+    width: 24px; /* Adjusted width */
     height: 100%; /* Takes full height of the container */
     flex-grow: 0;
     flex-shrink: 1;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 .quantity-change {
@@ -68,7 +91,6 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    flex-shrink: 0; /* Do not allow these to shrink */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -76,11 +98,9 @@
 
 .quantity-change.minus {
     background: url(../img/arrowdown.svg) no-repeat center;
-  /*  background-size: contain; /* Ensures the SVG fits the button */
 }
 
 .quantity-change.plus {
     background: url(../img/arrowdown.svg) no-repeat center;
-   /* background-size: contain; /* Ensures the SVG fits the button */
     transform: rotate(180deg); /* Rotates the plus button */
 }

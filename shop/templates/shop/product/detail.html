@@ -23,10 +23,15 @@
             {% csrf_token %}
             <div class="quantity-selector">
                 <span>Quantity:</span>
-                <button type="button" class="quantity-change minus" aria-label="Decrease quantity"></button>
-                {{ cart_product_form.quantity }}  <!-- Django renders the select and options here -->
-                <button type="button" class="quantity-change plus" aria-label="Increase quantity"></button>
+                <div class="selector-with-buttons">
+                    {{ cart_product_form.quantity }} <!-- Django renders the select and options here -->
+                    <div class="control-buttons">
+                        <button type="button" class="quantity-change plus" aria-label="Increase quantity"></button>
+                        <button type="button" class="quantity-change minus" aria-label="Decrease quantity"></button>
+                    </div>
+                </div>
             </div>
+
 
             <button class="add-to-cart-button-small">
                 <span class="add-to-cart-button-small__vector"></span>

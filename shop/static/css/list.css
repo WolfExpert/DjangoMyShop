@@ -123,7 +123,7 @@
     color: #27CA7D;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1185px) {
     .section-header {
         flex-direction: column;
         height: auto;
@@ -140,7 +140,7 @@
     }
 
     .section-header-sorting_text {
-        font-size: 12px;
+        font-size: 6px;
         line-height: 20px;
         margin-right: 0px;
         margin-bottom: 10px;
