@@ -1,6 +1,7 @@
 {% extends "shop/base.html" %}
 {% load static %}
 
+
 {% block title %}
     {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
@@ -11,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
     <body>
     <div class="popular-products">
+        {% if show_section_header %}
         <div class="section-header">
             <div class="section-header__name">Popular <span>Products</span></div>
             <div class="section-header-sorting">
@@ -33,6 +35,8 @@
 
         </div>
 
+
+
         <div class="section-header">
             <div class="section-header__name">Popular <span>Products</span></div>
             <div class="section-header-sorting">
@@ -47,7 +51,7 @@
                 <div class="section-header-sorting_text effect-underline">Fruits</div>
             </div>
         </div>
-
+        {% endif %}
 
         <div class="product-list">
             <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
@@ -117,4 +121,3 @@
 
     </body>
 {% endblock %}
-

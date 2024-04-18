@@ -3,6 +3,8 @@ from django.views.decorators.http import require_POST
 from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
+from shop.models import Category
+from .forms import CartAddOneProductForm  # Import the CartAddOneProductForm
 
 
 @require_POST
