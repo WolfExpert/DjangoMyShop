@@ -16,10 +16,12 @@ def product_list(request, category_slug=None):
 
     cart_product_form = CartAddOneProductForm()
     context = {
+        'category': category,
         'categories': categories,
         'products': products,
         'show_section_header': show_section_header,
         'cart_product_form': cart_product_form,
+        'default_quantity': 1
     }
 
     return render(request, 'shop/product/list.html', context)
@@ -31,6 +33,7 @@ def product_detail(request, id, slug):
                                 slug=slug,
                                 available=True)
     cart_product_form = CartAddProductForm()
+
     return render(request,
                   'shop/product/detail.html',
                   {'product': product,
